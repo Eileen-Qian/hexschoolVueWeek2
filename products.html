@@ -48,10 +48,8 @@
                       :true-value="1" :false-value="0">
                     <label class="form-check-label" :for="product.id"></label>
                     <!-- 使用 v-if / v-else 判斷是否啟用 -->
-                    <!-- <span class="text-success" v-if="product.is_enabled">啟用</span>
-                    <span class="text-danger" v-else>未啟用</span> -->
-                    <!-- 使用三元運算子判斷產品是否啟用 -->
-                    <span :class="{'text-success': product.is_enabled, 'text-danger': !product.is_enabled}">{{ product.is_enabled ? '啟用' : '未啟用' }}</span>
+                    <span class="text-success" v-if="product.is_enabled">啟用</span>
+                    <span class="text-danger" v-else>未啟用</span>
                   </div>
                 </td>
                 <td width="120">
@@ -85,7 +83,7 @@
               <img v-if="image" :src="image" alt="" class="images m-2">
             </template>
           </template>
-          <p class="text-secondary">請選擇一個商品查看</p>
+          <p v-else class="text-secondary">請選擇一個商品查看</p>
         </div>
       </div>
     </div>

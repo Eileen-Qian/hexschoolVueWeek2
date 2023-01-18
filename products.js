@@ -18,7 +18,6 @@ createApp({
         })
         .catch((error) => {
           // console.log(error.data.message);
-          alert(error.data.message);
           window.location = 'login.html';
         })
     },
